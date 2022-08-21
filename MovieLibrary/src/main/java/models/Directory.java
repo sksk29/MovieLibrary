@@ -25,4 +25,11 @@ public class Directory {
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
+
+    @Override
+    public String toString() {
+        return "firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                '}';
+    }
 }

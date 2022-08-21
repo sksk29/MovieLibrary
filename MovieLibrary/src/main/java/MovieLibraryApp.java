@@ -1,28 +1,34 @@
 import helper.Menu;
+import helper.UserInputHandler;
+import models.MovieLibrary;
 
 import java.util.Scanner;
 
+import static models.MenuOptions.*;
+
 public class MovieLibraryApp {
     public static void main(String[] args) {
+        MovieLibrary.fillMovieList();
+
         Menu.welcomeMessage();
         System.out.println("Witaj uzytkowniku w apliakcji Movie library");
         while (true) {
             Menu.printMenuOption();
 
 
-            Scanner scan = new Scanner(System.in);
-            int userOption = scan.nextInt();
-
-            switch (userOption) {
-                case 1:
-                    System.out.println("Top gun\n\n");
+            switch (UserInputHandler.getMenuOptionFromUser()) {
+                case DISPLAYINFORMATIONABOUTRANDOMMOVIES:
+                    System.out.println("wylosowales film");
+                    MovieLibrary.getRandomMovieInforamtion();
                     break;
-                case 2:
-                    System.out.println("Mission Impossible\n\n");
+                case DISPLAYACTORFROMMOVIE:
+                    System.out.println("Film wedlug aktora\n\n");
                     break;
-                case 3:
+                case EXITAPPLICATION:
                     System.out.println("Zamykanie apki...");
                     System.exit(1);
+                default:
+                    System.out.println("Wybrales zly numer");
 
             }
 
