@@ -22,7 +22,7 @@ public class MovieLibraryApp {
                     MovieLibrary.getRandomMovieInforamtion();
                     break;
                 case DISPLAYACTORFROMMOVIE:
-                    System.out.println("Film wedlug aktora\n\n");
+                    MovieLibrary.printActorFilmography();
                     break;
                 case EXITAPPLICATION:
                     System.out.println("Zamykanie apki...");

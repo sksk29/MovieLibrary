@@ -1,5 +1,6 @@
 package helper;
 
+import models.Actor;
 import models.MenuOptions;
 
 import java.util.Scanner;
@@ -29,5 +30,11 @@ public class UserInputHandler {
             System.out.println("Noty integer try aganin");
         }
         return scan.nextInt();
+    }
+    public static Actor getActorFromUser(){
+        System.out.println("Podaj imie i nazwisko aktora: ");
+        String[] actor = scan.nextLine().split(" ");
+
+        return new Actor(actor[0], actor[1]);
     }
 }
