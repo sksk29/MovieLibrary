@@ -59,10 +59,10 @@ public class MovieLibrary {
             }
         }
     }
-    private static List<String> getActorFilmographyList(Actor actor){
+    private static List<String> getActorFilmographyList(Actor actorToFind){
         Predicate<Movie> movieCheck = movie -> movie.getListOfActors().stream()
-                .anyMatch(actor1 -> actor1.getFirstName().equals(actor.getFirstName()) &&
-                        actor.getSecondName().equals(actor.getSecondName()));
+                .anyMatch(actor -> actor.getFirstName().equals(actorToFind.getFirstName()) &&
+                        actor.getSecondName().equals(actorToFind.getSecondName()));
         return  moviesLibrary.stream()
                 .filter(movieCheck)
                 .map(Movie::getTitle)
